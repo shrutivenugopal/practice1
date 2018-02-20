@@ -1,0 +1,44 @@
+import java.util.Scanner;
+class Employe
+{
+	public static void main(String args[])
+	{
+		String seat_number=new String();
+		String seats[]= {"INDMUMEDG003365","INDKOHMYG007112","INDCHNSGN002082","INDBLRWFD012215","USANYKMMD052314","INDMUMPOW007365"};
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the seat number");
+		seat_number = in.nextLine();
+		int len=seat_number.length();
+		if(len!=15)
+			System.out.println("Incorrect Data\n");
+		int i; 
+		int flag=0;
+		for(i=0;i<6;i++)
+		{
+			if(seats[i].equals(seat_number))
+				flag=1;
+		}
+		if(flag==0)
+		{
+			System.out.println("Seat code does not exist");
+		}
+		String city;
+		city= seat_number.substring(3,6);
+		System.out.println(city);
+		switch(city)
+		{
+			case "MUM": System.out.println("Mumbai");
+				    break;
+			case "KOH": System.out.println("Kochi");
+				    break;
+			case "CHN": System.out.println("Chennai");
+				    break;
+			case "BLR": System.out.println("Bengaluru");
+				    break;
+			case "NYK": System.out.println("New York");
+				    break;
+		}
+		in.close();
+	}
+	
+}
